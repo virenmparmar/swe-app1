@@ -1,0 +1,22 @@
+language: python
+python:
+  - "3.8"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - black ./
+  - flake8 ./
+  - coverage run ebdjango/manage.py test
+
+after_success: coveralls
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: "us-west-2"
+  app: "django-app-env"
+  env: "django-env"
+  bucket_name: "elasticbeanstalk-us-west-2-308785150945"

@@ -3,9 +3,10 @@ branch-defaults:
     environment: django-app-env
     group_suffix: null
   main:
-    environment: polls-app
+    environment: django-env
+    group_suffix: null
 global:
-  application_name: polls-app
+  application_name: django-app-env
   branch: null
   default_ec2_keyname: polls-app
   default_platform: Python 3.7

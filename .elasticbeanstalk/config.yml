@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: django-app-env
     group_suffix: null
+  main:
+    environment: polls-app
 global:
   application_name: polls-app
   branch: null
@@ -14,5 +16,5 @@ global:
   platform_version: null
   profile: eb-cli
   repository: null
-  sc: null
+  sc: git
   workspace_type: Application

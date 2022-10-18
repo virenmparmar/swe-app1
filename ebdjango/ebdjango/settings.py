@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-il7m5pv5mn6!(2vz-1m6n7cc0a#8x0d%exhc=d-=i42$=7rr6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-app-env.eba-8tidgyv2.us-west-2.elasticbeanstalk.com','44.237.210.124']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,11 +89,11 @@ if 'RDS_DB_NAME' in os.environ:
     }
 else:
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': str(BASE_DIR / 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation

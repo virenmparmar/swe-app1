@@ -9,6 +9,7 @@ script:
   - black ./
   - flake8 ./
   - coverage run ebdjango/manage.py test
+  - coverage html
 
 after_success: coveralls
 
